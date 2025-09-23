@@ -5,9 +5,7 @@ import Link from "next/link";
 
 export async function generateMetadata(): Promise<Metadata> {
   // dynamically generated header and meta tags
-  const slug = "random number : " + Math.random();
-
-  const title = slug;
+  const title = "Next.js の学習のために作成されたサイト";
   const description = `これは Next.js の学習のために作成されたサイトです。`;
 
   return {

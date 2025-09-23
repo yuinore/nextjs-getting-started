@@ -5,6 +5,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { generateItemName } from "@/lib/generateItemName";
+import RandomItems from "@/components/randomItems";
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = `販売中の商品一覧`;
@@ -25,20 +26,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function ItemPage() {
   const topSellingItemIds = [1, 16, 145];
-  let randomPickItemIds = [
-    Math.floor(Math.random() * 10),
-    Math.floor(Math.random() * 10),
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 1000),
-    Math.floor(Math.random() * 1000),
-    Math.floor(Math.random() * 10000),
-    Math.floor(Math.random() * 100000),
-    Math.floor(Math.random() * 1000000),
-  ];
-
-  // make unique and sort
-  randomPickItemIds = [...new Set(randomPickItemIds)].toSorted((a, b) => a - b);
 
   return (
     <div>
@@ -50,14 +37,7 @@ export default async function ItemPage() {
           </li>
         ))}
       </ul>
-      <h2>ランダム商品</h2>
-      <ul>
-        {randomPickItemIds.map((id) => (
-          <li key={id}>
-            <Link href={`/items/${id}`}>{generateItemName(id)}</Link>
-          </li>
-        ))}
-      </ul>
+      <RandomItems />
       <Link href="/items">別の商品を表示する</Link>
     </div>
   );
