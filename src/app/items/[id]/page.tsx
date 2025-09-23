@@ -2,7 +2,7 @@
 
 // show title and description for the item
 
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { generateItemName } from "@/lib/generateItemName";
 

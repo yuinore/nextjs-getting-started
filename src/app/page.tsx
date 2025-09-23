@@ -1,11 +1,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   // dynamically generated header and meta tags
   const slug = "random-slug-" + Math.random();
 
