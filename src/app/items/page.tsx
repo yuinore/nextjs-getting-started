@@ -1,6 +1,6 @@
-// /items/[id]/page.tsx
+// /items/page.tsx
 
-// show title and description for the item
+// show list of items and random items
 
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -38,7 +38,6 @@ export default async function ItemPage() {
         ))}
       </ul>
       <RandomItems />
-      <Link href="/items">別の商品を表示する</Link>
     </div>
   );
 }
