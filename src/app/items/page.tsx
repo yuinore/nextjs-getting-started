@@ -2,11 +2,9 @@
 
 // show title and description for the item
 
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { generateItemName } from "@/lib/generateItemName";
-
-interface MetadataProps {}
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -15,9 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-interface PageProps {}
-
-export default async function ItemPage({}: PageProps) {
+export default async function ItemPage() {
   const topSellingItemIds = [1, 16, 145];
   let randomPickItemIds = [
     Math.floor(Math.random() * 10),
