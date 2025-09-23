@@ -69,7 +69,7 @@ export default function Counter() {
         )}
       {secret3Revealed && (
         <div>
-          <span style={{ color: "red" }}>おめでとうございます！</span> Next.js について、もっと深く学んでみましょう！ (進捗 3/3)
+          <span style={{ color: "red" }}>おめでとうございます！ 全ての進捗をクリアしました！</span> Next.js について、もっと深く学んでみましょう！ (進捗 3/3)
         </div>
       )}
     </div>
