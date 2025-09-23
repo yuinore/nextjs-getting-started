@@ -7,9 +7,19 @@ import Link from "next/link";
 import { generateItemName } from "@/lib/generateItemName";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const title = `販売中の商品一覧`;
+  const description = `現在販売中の商品を見ることができます。`;
+
   return {
-    title: `販売中の商品一覧`,
-    description: `現在販売中の商品を見ることができます。`,
+    title: title,
+    description: description,
+    twitter: {
+      card: "summary",
+      site: "https://nextjs-getting-started-clone.vercel.app",
+      creator: "@yuinore",
+      title: title,
+      description: description,
+    },
   };
 }
 
@@ -35,13 +45,17 @@ export default async function ItemPage() {
       <h2>売れ筋商品</h2>
       <ul>
         {topSellingItemIds.map((id) => (
-          <li key={id}><Link href={`/items/${id}`}>{generateItemName(id)}</Link></li>
+          <li key={id}>
+            <Link href={`/items/${id}`}>{generateItemName(id)}</Link>
+          </li>
         ))}
       </ul>
       <h2>ランダム商品</h2>
       <ul>
         {randomPickItemIds.map((id) => (
-          <li key={id}><Link href={`/items/${id}`}>{generateItemName(id)}</Link></li>
+          <li key={id}>
+            <Link href={`/items/${id}`}>{generateItemName(id)}</Link>
+          </li>
         ))}
       </ul>
       <Link href="/items">別の商品を表示する</Link>

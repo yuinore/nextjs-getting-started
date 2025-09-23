@@ -5,11 +5,21 @@ import Link from "next/link";
 
 export async function generateMetadata(): Promise<Metadata> {
   // dynamically generated header and meta tags
-  const slug = "random-slug-" + Math.random();
+  const slug = "random number : " + Math.random();
+
+  const title = slug;
+  const description = `これは Next.js の学習のために作成されたサイトです。`;
 
   return {
-    title: slug,
-    description: slug,
+    title: title,
+    description: description,
+    twitter: {
+      card: "summary",
+      site: "https://nextjs-getting-started-clone.vercel.app",
+      creator: "@yuinore",
+      title: title,
+      description: description,
+    },
   };
 }
 
@@ -25,11 +35,11 @@ export default function Home() {
           height={38}
           priority
         />
-        <div>
-          これは Next.js の学習のために作成されたサイトです。
-        </div>
+        <div>これは Next.js の学習のために作成されたサイトです。</div>
         <ol>
-          <li><Link href="/items">青果の通販ページ</Link>を開く</li>
+          <li>
+            <Link href="/items">青果の通販ページ</Link>を開く
+          </li>
           <li>売れ筋商品を見る</li>
           <li>お買い物のヒントを見る</li>
           <li>成果を X でみんなに知らせる</li>

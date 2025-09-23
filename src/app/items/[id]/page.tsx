@@ -10,21 +10,28 @@ interface MetadataProps {
   params: Promise<{ id: string }>;
 }
 
-export async function generateMetadata(
-  { params }: MetadataProps,
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: MetadataProps): Promise<Metadata> {
   const { id } = await params;
 
-  const isSecretDescription =
-    Number(id) === 116;
+  const isSecretDescription = Number(id) === 116;
 
+  const title = `商品番号 ${id} ${generateItemName(Number(id))} の通販ページ`;
   const description = isSecretDescription
     ? `あなたも「酸っぱいぶどう風 超美味しいメロン」を購入してみませんか？`
     : `${generateItemName(Number(id))} の通販ページです。`;
 
   return {
-    title: `商品番号 ${id} ${generateItemName(Number(id))} の通販ページ`,
+    title: title,
     description: description,
+    twitter: {
+      card: "summary",
+      site: "https://nextjs-getting-started-clone.vercel.app",
+      creator: "@yuinore",
+      title: title,
+      description: description,
+    },
   };
 }
 
