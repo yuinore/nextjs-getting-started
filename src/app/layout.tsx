@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Counter from "@/components/counter";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div>これはルートレイアウト (src/app/layout.tsx) です。すべてのページに適用されます。ページをリロードするまで、ステートが保持されます。</div>
+        <div>
+          これはルートレイアウト (src/app/layout.tsx)
+          です。すべてのページに適用されます。ページをリロードするまで、ステートが保持されます。
+        </div>
+        <details>
+          <summary>クリックしてやることリストを開く</summary>
+          <ol>
+            <li>
+              <Link href="/items">青果の通販ページ</Link>を開く
+            </li>
+            <li>売れ筋商品を見る</li>
+            <li>お買い物のヒントを見る</li>
+            <li>成果を X でみんなに知らせる</li>
+            <li>Next.js について、もっと深く学んでみる</li>
+          </ol>
+        </details>
         <Counter />
         <div>{children}</div>
       </body>
