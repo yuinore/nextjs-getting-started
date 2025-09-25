@@ -5,3 +5,8 @@
   margin-right: 0.5rem;
   vertical-align: baseline;
 }
+
+.muted-slightly-smaller {
+  font-size: 0.85rem;
+  color: #666;
+}

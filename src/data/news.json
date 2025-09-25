@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "publishedAt": "2024-4-15",
+    "author": "yuinore",
+    "title": "そろそろ Next.js に手を出したいという焦りが観測されました",
+    "content": "React の公式サイトがフルスタックのフレームワークを推奨しており、そろそろ Next.js に手を出したいという焦りが高まっているということが、 Discord サーバー内での発言履歴により確認できました。"
+  },
+  {
+    "id": "2",
+    "publishedAt": "2025-9-23",
+    "author": "yuinore",
+    "title": "Next.js の学習のために作成されたサイトが公開されました",
+    "content": "Next.js の学習のために作成されたサイトが公開されました。このサイトでは最新の Next.js 15 と App Router を使用しており、人類の最先端の叡智を感じることができます。"
+  },
+  {
+    "id": "3",
+    "publishedAt": "2025-9-25",
+    "author": "yuinore",
+    "title": "レスポンシビリティが向上しました",
+    "content": "ダイナミックルーティングにおけるプリフェッチを導入することで、ユーザーの操作に対するレスポンシビリティが向上しました。"
+  },
+  {
+    "id": "4",
+    "publishedAt": "2025-9-26",
+    "author": "yuinore",
+    "title": "generateStaticParams が導入されました",
+    "content": "generateStaticParams を使用することで、ビルド時に静的なページを生成することができるようになりました。"
+  }
+]

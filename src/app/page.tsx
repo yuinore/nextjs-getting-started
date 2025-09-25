@@ -38,6 +38,9 @@ export default function Home() {
           <li>
             <Link href="/items">青果の通販ページ</Link>を開く
           </li>
+          <li>
+            <Link href="/news">技術ニュース</Link>を読む (generateStaticParams使用)
+          </li>
           <li>売れ筋商品を見る</li>
           <li>お買い物のヒントを見る</li>
           <li>成果を X でみんなに知らせる</li>
