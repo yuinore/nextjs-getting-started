@@ -5,6 +5,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { generateItemName } from "@/lib/generateItemName";
+import commonStyles from "@/app/common.module.css";
 
 interface MetadataProps {
   params: Promise<{ id: string }>;
@@ -53,20 +54,47 @@ export default async function ItemPage({ params }: PageProps) {
       <div>お買い物のヒント：商品番号 65535 の商品を 10 個購入すると……！？</div>
       <ul>
         <li>
-          <Link href={`/items/${Number(id) + 1}`} prefetch={true}>
-            次の商品
-          </Link>
+          Dynamic Routes:
+          <ul style={{ marginBottom: "0.75rem" }}>
+            <li>
+              <Link href={`/items/${Number(id) - 1}`} prefetch={true}>
+                前の商品
+              </Link>
+              <span className={commonStyles.hint}>
+                (prefetch=true のため、高速に遷移できます)
+              </span>
+            </li>
+            <li>
+              <Link href={`/items/${Number(id) + 1}`} prefetch={true}>
+                次の商品
+              </Link>
+              <span className={commonStyles.hint}>
+                (prefetch=true のため、高速に遷移できます)
+              </span>
+            </li>
+            <li>
+              <Link href={`/items/${Number(id) + 10}`} prefetch={false}>
+                10 個後の商品
+              </Link>
+              <span className={commonStyles.hint}>
+                (prefetch=false のため、高速に遷移できません)
+              </span>
+            </li>
+          </ul>
         </li>
         <li>
-          <Link href={`/items/${Number(id) - 1}`} prefetch={true}>
-            前の商品
-          </Link>
-        </li>
-        <li>
-          <Link href="/items">商品一覧</Link>
-        </li>
-        <li>
-          <Link href="/">トップページに戻る</Link>
+          Static Routes:
+          <span className={commonStyles.hint}>
+            (既定でプリフェッチされます)
+          </span>
+          <ul>
+            <li>
+              <Link href="/items">商品一覧</Link>
+            </li>
+            <li>
+              <Link href="/">トップページに戻る</Link>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>

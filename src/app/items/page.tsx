@@ -38,6 +38,12 @@ export default async function ItemPage() {
         ))}
       </ul>
       <RandomItems />
+      <h2>トップページ</h2>
+      <ul>
+        <li>
+          <Link href="/">トップページに戻る</Link>
+        </li>
+      </ul>
     </div>
   );
 }

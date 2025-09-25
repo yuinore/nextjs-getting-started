@@ -43,12 +43,6 @@ export default function Home() {
           <li>成果を X でみんなに知らせる</li>
           <li>Next.js について、もっと深く学んでみる</li>
         </ol>
-        <div style={{ fontSize: "0.85rem" }}>
-          <a href="https://github.com/yuinore/nextjs-getting-started">
-            See GitHub
-          </a>{" "}
-          (ネタバレ注意)
-        </div>
       </main>
     </div>
   );
