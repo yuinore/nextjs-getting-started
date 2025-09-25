@@ -41,6 +41,10 @@ interface PageProps {
 
 export default async function ItemPage({ params }: PageProps) {
   const { id } = await params;
+
+  // Loading状態を確認するための人工的な遅延（開発時のみ）
+  // await new Promise(resolve => setTimeout(resolve, 1000));
+
   return (
     <div>
       <h2>{generateItemName(Number(id))} の通販ページ</h2>
@@ -49,10 +53,14 @@ export default async function ItemPage({ params }: PageProps) {
       <div>お買い物のヒント：商品番号 65535 の商品を 10 個購入すると……！？</div>
       <ul>
         <li>
-          <Link href={`/items/${Number(id) + 1}`}>次の商品</Link>
+          <Link href={`/items/${Number(id) + 1}`} prefetch={true}>
+            次の商品
+          </Link>
         </li>
         <li>
-          <Link href={`/items/${Number(id) - 1}`}>前の商品</Link>
+          <Link href={`/items/${Number(id) - 1}`} prefetch={true}>
+            前の商品
+          </Link>
         </li>
         <li>
           <Link href="/items">商品一覧</Link>
