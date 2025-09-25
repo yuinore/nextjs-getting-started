@@ -73,11 +73,11 @@ export default async function ItemPage({ params }: PageProps) {
               </span>
             </li>
             <li>
-              <Link href={`/items/${Number(id) + 10}`} prefetch={false}>
+              <Link href={`/items/${Number(id) + 10}`} prefetch={"auto"}>
                 10 個後の商品
               </Link>
               <span className={commonStyles.hint}>
-                (prefetch=false のため、高速に遷移できません)
+                (prefetch="auto" (既定値) のため、高速に遷移できません)
               </span>
             </li>
           </ul>
