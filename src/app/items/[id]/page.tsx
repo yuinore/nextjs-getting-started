@@ -77,7 +77,7 @@ export default async function ItemPage({ params }: PageProps) {
                 10 個後の商品
               </Link>
               <span className={commonStyles.hint}>
-                (prefetch="auto" (既定値) のため、高速に遷移できません)
+                (prefetch=&quot;auto&quot; (既定値) のため、高速に遷移できません)
               </span>
             </li>
           </ul>
