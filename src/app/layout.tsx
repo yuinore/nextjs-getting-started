@@ -4,6 +4,7 @@ import "./globals.css";
 import Counter from "@/components/counter";
 import Link from "next/link";
 import Footer from "@/components/footer";
+import commonStyles from "@/app/common.module.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,7 +46,10 @@ export default function RootLayout({
           </ol>
         </details>
         <Counter />
-        <div>{children}</div>
+        <div className={commonStyles["content-wrapper"]}>
+          <div className={commonStyles["title"]}>props.children</div>
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

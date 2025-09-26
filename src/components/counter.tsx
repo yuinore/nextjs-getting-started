@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./counter.module.css";
+import commonStyles from "@/app/common.module.css";
 import { generateItemName } from "@/lib/generateItemName";
 
 type CurrentCount = Record<string, number>;
@@ -26,7 +26,9 @@ export default function Counter() {
   }
 
   return (
-    <div className={styles["counter-container"]}>
+    <div className={commonStyles["content-wrapper"]}>
+      <div className={commonStyles["title"]}>counter.tsx</div>
+      <h3>お買い物カゴ (useState 使用)</h3>
       <button
         onClick={() => {
           let currentCountId = location.pathname.split("/").pop() ?? "-1";
@@ -52,24 +54,32 @@ export default function Counter() {
       >
         カートの中身を空にする
       </button>
-      {Object.entries(count).map(([id, count]) => (
-        <div key={id}>
-          {generateItemName(Number(id))} : {count} 個
-        </div>
-      ))}
+      <ul>
+        {Object.entries(count).map(([id, count]) => (
+          <li key={id}>
+            {generateItemName(Number(id))} : {count} 個
+          </li>
+        ))}
+      </ul>
       {secretRevealed && (
         <div>
-          <span style={{ color: "red" }}>シークレットが解禁されました！</span> 次は<b>「超すっぱいぶどう」</b>を購入してみましょう！ (進捗 1/3)
+          <span style={{ color: "red" }}>シークレットが解禁されました！</span>{" "}
+          次は<b>「超すっぱいぶどう」</b>を購入してみましょう！ (進捗 1/3)
         </div>
-        )}
-        {secret2Revealed && (
-            <div>
-            <span style={{ color: "red" }}>おめでとうございます！</span> この商品ページをシェアして、みんなに知らせてあげましょう！ Twitter カードに何か新しいヒントがあるかも……？ (進捗 2/3)
-            </div>
-        )}
+      )}
+      {secret2Revealed && (
+        <div>
+          <span style={{ color: "red" }}>おめでとうございます！</span>{" "}
+          この商品ページをシェアして、みんなに知らせてあげましょう！ Twitter
+          カードに何か新しいヒントがあるかも……？ (進捗 2/3)
+        </div>
+      )}
       {secret3Revealed && (
         <div>
-          <span style={{ color: "red" }}>おめでとうございます！ 全ての進捗をクリアしました！</span> Next.js について、もっと深く学んでみましょう！ (進捗 3/3)
+          <span style={{ color: "red" }}>
+            おめでとうございます！ 全ての進捗をクリアしました！
+          </span>{" "}
+          Next.js について、もっと深く学んでみましょう！ (進捗 3/3)
         </div>
       )}
     </div>

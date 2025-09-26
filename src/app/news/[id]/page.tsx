@@ -10,9 +10,11 @@ import { getNewsData, getNewsById } from "@/lib/news";
 export async function generateStaticParams() {
   const newsItems = await getNewsData();
 
-  return newsItems.map((item) => ({
-    id: item.id,
-  }));
+  return newsItems
+    .filter((item) => Number(item.id) > 0)
+    .map((item) => ({
+      id: item.id,
+    }));
 }
 
 // generateMetadata: 動的メタデータ生成
@@ -27,7 +29,7 @@ export async function generateMetadata({
   const newsItem = await getNewsById(id);
 
   // 記事が見つからない場合は404ページを表示
-  if (!newsItem) {
+  if (!newsItem || Number(id) <= 0) {
     notFound();
   }
 
@@ -54,7 +56,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
   const newsItem = await getNewsById(id);
 
   // 記事が見つからない場合は404ページを表示
-  if (!newsItem) {
+  if (!newsItem || Number(id) <= 0) {
     notFound();
   }
 

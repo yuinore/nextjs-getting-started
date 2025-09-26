@@ -1,5 +1,12 @@
 [
   {
+    "id": "-1",
+    "publishedAt": "1970-1-1",
+    "author": "undefined",
+    "title": "きさらぎ駅について",
+    "content": "このニュースは存在しません。"
+  },
+  {
     "id": "1",
     "publishedAt": "2024-4-15",
     "author": "yuinore",
